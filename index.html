@@ -1,40 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html>
+  <head>
+    <title>KFACBT</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <meta http-equiv="refresh" content="2;url=https://gytxtx.github.io/" />
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-</head>
-
-<body>
-    
-    <h1>404 Not Frond</h1>
-    正在跳转至主页，还有 <span id="totalSecond">5</span> 秒
-
-    <script language="javascript" type="text/javascript">
-        var second = document.getElementById('totalSecond').textContent;
-
-        if (navigator.appName.indexOf("Explorer") > -1) {
-            second = document.getElementById('totalSecond').innerText;
-        } else {
-            second = document.getElementById('totalSecond').textContent;
-        }
-
-        setInterval("redirect()", 1000);
-        function redirect() {
-            if (second < 0) {
-                location.href = 'https://gytxtx.github.io/';
-            } else {
-                if (navigator.appName.indexOf("Explorer") > -1) {
-                    document.getElementById('totalSecond').innerText = second--;
-                } else {
-                    document.getElementById('totalSecond').textContent = second--;
-                }
-            }
-        } 
+    <script type="text/javascript">
+      location.href = 'https://gytxtx.github.io/';
     </script>
-</body>
-
+  </head>
+  <body>
+    <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:18px;text-align:center">
+      此页面尚未建设。
+      <br/>
+      您可以跳转至 <a href="https://gytxtx.github.io/">https://gytxtx.github.io/</a>来获取更多内容。
+    </p>
+  </body>
 </html>
