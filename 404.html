@@ -1,40 +1,59 @@
 <!DOCTYPE html>
+<!-- 开始HTML文档声明，设置语言为英文 -->
 <html lang="en">
 
 <head>
+    <!-- 设置网页字符集为UTF-8 -->
     <meta charset="UTF-8">
+    
+    <!-- 优化IE浏览器的渲染模式和表现行为 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- 设置viewport元标签以适应移动设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
 </head>
 
 <body>
     
+    <!-- 显示404错误提示标题 -->
     <h1>404 Not Found</h1>
+    
+    <!-- 提示信息及倒计时秒数 -->
     正在跳转至主页，还有 <span id="totalSecond">5</span> 秒
-
+    
+    <!-- JavaScript脚本区域，用于处理页面自动跳转逻辑 -->
     <script language="javascript" type="text/javascript">
+        
+        // 获取并初始化倒计时秒数
         var second = document.getElementById('totalSecond').textContent;
-
+        
+        // 判断浏览器是否为Internet Explorer，以便选择合适的属性获取文本内容
         if (navigator.appName.indexOf("Explorer") > -1) {
             second = document.getElementById('totalSecond').innerText;
         } else {
             second = document.getElementById('totalSecond').textContent;
         }
-
-        setInterval("redirect()", 1000);
+        
+        // 设置定时器，每间隔1秒执行一次redirect函数
+        setInterval(redirect, 1000);
+        
+        // 定义redirect函数，实现倒计时和跳转功能
         function redirect() {
             if (second < 0) {
+                // 当倒计时结束时，跳转到主页
                 location.href = '/';
             } else {
+                // 更新倒计时显示
                 if (navigator.appName.indexOf("Explorer") > -1) {
                     document.getElementById('totalSecond').innerText = second--;
                 } else {
                     document.getElementById('totalSecond').textContent = second--;
                 }
             }
-        } 
+        }
     </script>
+    
 </body>
 
 </html>
